@@ -1,0 +1,31 @@
+body {
+    background-color: #06ffea;
+    font-family: monospace;
+}
+
+#login {
+    background-color: #0a06ff;
+    display: inline-block;
+}
+
+h2 {
+    margin: 5px 5px 0 5px;
+}
+
+input {
+    margin: 10px;
+    border-radius: 10px;
+    padding: 5px 10px 5px 10px;
+    border: solid black;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    background-color: #0a06ff;
+    display: block;
+}
+
+.link {
+    color: #06ffea;
+}
