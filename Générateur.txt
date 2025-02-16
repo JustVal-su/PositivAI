@@ -1,9 +1,0 @@
-Pour le générateur de caractères textuels je vais utiliser le standard ASCII qui comporte 95 valeurs :
- !"#$%&'()*+,-./
-0123456789:;<=>?
-@ABCDEFGHIJKLMNO
-PQRSTUVWXYZ[\]^_
-`abcdefghijklmno
-pqrstuvwxyz{|}~
-Et une valeur pour la fin du message.
-Donc 96.
