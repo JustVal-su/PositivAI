@@ -1,3 +1,7 @@
+* {
+    margin-left: 5px;
+}
+
 body {
     background-color: #0640ff;
     font-family: monospace;
@@ -18,13 +22,6 @@ a {
 
 .no_underline {
     text-decoration: none;
-}
-
-.ourproject {
-    background-color: #00AC92;
-    display: inline-block;
-    border-radius: 20px;
-    padding: 10px 20px 10px 20px;
 }
 
 img {
@@ -53,20 +50,28 @@ p {
 #logopostid {
     font-size: 40px;
     display: inline-block;
-    margin: 0 0 0 0;
-}
-
-.second_div {
-    display: inline-block;
-}
-
-#imgAah {
-    display: inline-block;
-    margin-bottom: 255px;
-    margin-right: 10px;
+    margin: 0 0 5px 0;
 }
 
 .description_posai {
-    margin: 0 0 0 5px;
-    color: rgb(224, 224, 224);
+    color: rgb(0, 217, 255);
+    font-weight: bold;
+    font-size: 25px;
+    margin: 0;
+}
+
+#▮▮ {
+    font-style: normal;
+    text-decoration: none;
+    font-size: 8pt;
+    position: relative;
+    bottom: 2px;
+}
+
+#remove___ {
+    text-decoration: none;
+}
+
+#img_omg {
+    margin: 0;
 }
