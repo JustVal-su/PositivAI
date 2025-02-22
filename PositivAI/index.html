@@ -31,13 +31,15 @@
         <button onclick="login()" class="loginbuttons" type="button">Submit</button>
     </form>
 
-    <div class="continue_panel">
+    <div class="continue_panel"  id="continue_div">
         <h2 class="logH2" id="log_id"></h2>
         <img src="Pp.png" alt="Your pfp" class="yourphoto">
         <br>
-        <button class="loginbuttons">Continue</button>
+        <button class="loginbuttons" onclick="removeContinueDiv()">Continue</button>
     </div>
 
+    <input type="text" placeholder="Ask something"><button>Send</button>
+    <br>
     <button onclick="getRandomValue()">Random value</button>
 
     <footer>

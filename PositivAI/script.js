@@ -1,3 +1,6 @@
+const loginForm = document.getElementById("login");
+const continueDiv = document.getElementById("continue_div");
+
 function removeDisclaimer() {
     const element = document.getElementById("disclaimer");
     element.remove();
@@ -5,13 +8,20 @@ function removeDisclaimer() {
 
 
 function login() {
-    const queryH2 = document.getElementById("log_id");
     let usernameText = document.getElementById("UsernameInput").value;
     let passwordText = document.getElementById("PasswordInput").value;
-    queryH2.innerHTML = "Nice to meet you, " + usernameText + "!";
-    // remove the login form
-    const loginForm = document.getElementById("login");
-    loginForm.remove();
+
+    if (usernameText == "" || passwordText == "") {
+        alert("Username and password are required!")
+    } else {
+        const queryH2 = document.getElementById("log_id");
+        queryH2.innerHTML = "Nice to meet you, " + usernameText + "!";
+        // Supprime le formulaire de connexion
+        loginForm.remove();
+        // Rend visible la div où il est inscrit de continuer
+        continueDiv.style.display = "inline-block";
+        console.log("a");
+    }
 }
 
 function getRandomElement(array) {
@@ -34,9 +44,13 @@ function getRandomElement(array) {
     return rValue;
 }
 
-let AsciiArray = [' ', '!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-', '.', '/', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ';', '<', '=', '>', '?', '@', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '[', '\\', ']', '^', '_', '`', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '{', '|', '}', '~'];
+let AsciiArray = ['end', ' ', '!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-', '.', '/', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ';', '<', '=', '>', '?', '@', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '[', '\\', ']', '^', '_', '`', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '{', '|', '}', '~'];
 getRandomElement(AsciiArray);
 
 function getRandomValue() {
     getRandomElement(AsciiArray);
+}
+
+function removeContinueDiv() {
+    continueDiv.remove();
 }

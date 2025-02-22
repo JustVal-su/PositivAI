@@ -69,3 +69,6 @@ footer {
     transition: 0.3s;
 }
 
+#continue_div {
+    display: none;
+}
