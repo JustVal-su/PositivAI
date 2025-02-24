@@ -1,11 +1,11 @@
 const loginForm = document.getElementById("login");
 const continueDiv = document.getElementById("continue_div");
+const sendButton = document.getElementById("send_button");
 
 function removeDisclaimer() {
     const element = document.getElementById("disclaimer");
     element.remove();
 }
-
 
 function login() {
     let usernameText = document.getElementById("UsernameInput").value;
@@ -24,6 +24,8 @@ function login() {
     }
 }
 
+let randomValue = "placeholder";
+
 function getRandomElement(array) {
     // Vérifie si l'argument est un tableau et n'est pas vide
     if (!Array.isArray(array) || array.length === 0) {
@@ -40,12 +42,13 @@ function getRandomElement(array) {
     // Affiche l'élément aléatoire
     console.log(rValue);
 
+    randomValue = rValue
+
     // Retourne l'élément aléatoire
     return rValue;
 }
 
 let AsciiArray = ['end', ' ', '!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-', '.', '/', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ';', '<', '=', '>', '?', '@', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '[', '\\', ']', '^', '_', '`', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '{', '|', '}', '~'];
-getRandomElement(AsciiArray);
 
 function getRandomValue() {
     getRandomElement(AsciiArray);
@@ -53,4 +56,24 @@ function getRandomValue() {
 
 function removeContinueDiv() {
     continueDiv.remove();
+}
+
+function printQuestion() {
+    let userQuestion = document.getElementById("ask_something").value;
+    console.log(userQuestion);
+    document.getElementById("send_button").style.cursor = "not-allowed";
+    sendButton.setAttribute("disabled", "");
+}
+
+function getRanEl() {
+    let isFinished = false;
+    getRandomElement(AsciiArray);
+
+    if (randomValue == "end") {
+	    isFinished = true;
+    }
+    
+    if (isFinished != true) {
+        requestAnimationFrame(getRanEl);
+    }  
 }

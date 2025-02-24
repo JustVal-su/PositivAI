@@ -40,6 +40,7 @@ footer {
     background-color: rgba(255,255,255,0.8);
     position: absolute;
     padding: 50px 20px 50px 20px;
+    z-index: 1;
 }
 
 .continue_panel {
@@ -74,15 +75,24 @@ footer {
     text-align: center;
 }
 
-/*#send_button:hover {
-    animation: shake 0.4s;
-    transform: scale();
+#send_button {
+    background-color: transparent;
+    border: none;
+    font-size: 24pt;
+    position: relative;
+    top: 5px;
+    right: 10px;
+    z-index: 0;
+}
+
+#send_button:hover {
+    animation: shake 0.4s 2;
 }
 
 @keyframes shake {
     0% { transform: rotate(0deg); }
-    25% { transform: rotate(-2deg); }
+    25% { transform: rotate(-5deg); }
     50% { transform: rotate(0deg); }
-    75% { transform: rotate(2deg); }
+    75% { transform: rotate(5deg); }
     100% { transform: rotate(0deg); }
-}*/
+}
