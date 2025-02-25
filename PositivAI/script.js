@@ -65,15 +65,26 @@ function printQuestion() {
     sendButton.setAttribute("disabled", "");
 }
 
+let isFinished = false;
+let ai_answer = "";
+let aiAnswerField = document.getElementById("ai_answer_field");
+
 function getRanEl() {
-    let isFinished = false;
+    isFinished = false;
     getRandomElement(AsciiArray);
 
     if (randomValue == "end") {
 	    isFinished = true;
+    } else {
+        writeAiAnswer();
     }
     
     if (isFinished != true) {
         requestAnimationFrame(getRanEl);
-    }  
+    }
+}
+
+function writeAiAnswer() {
+    ai_answer = ai_answer + randomValue;
+    aiAnswerField.innerHTML = ai_answer;
 }
