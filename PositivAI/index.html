@@ -24,9 +24,9 @@
     <p>Ask me anyting, I'll answer !</p>
     <form id="login">
         <h2 class="logH2">Login or signup</h2>
-        <input type="text" placeholder="Username" id="UsernameInput">
+        <input type="text" placeholder="Username" id="UsernameInput" oninput="validateInput(this)">
         <br>
-        <input type="password" placeholder="Password" id="PasswordInput">
+        <input type="password" placeholder="Password" id="PasswordInput" oninput="validateInput(this)">
         <br>
         <button onclick="login()" class="loginbuttons" type="button">Submit</button>
     </form>
@@ -38,12 +38,11 @@
         <button class="loginbuttons" onclick="removeContinueDiv()">Continue</button>
     </div>
 
-    <input type="text" placeholder="Ask something" id="ask_something"><button onclick="getRanEl()" id="send_button">➤</button>
+    <input type="text" placeholder="Ask something" id="ask_something" oninput="validateInput(this)"><button onclick="printQuestion()" id="send_button">➤</button>
     <br>
-    <!-- C'est une balise code qui est utilisée car mieux vaut que du code aléatoire ne soit pas exécuté... -->
-    <code id="ai_answer_field"></code>
+    <p id="ai_answer_field"></p>
     <br>
-    <button onclick="getRandomValue()">Random value</button>
+    <button onclick="addElement()">Add div</button>
 
     <footer>
     <nav>

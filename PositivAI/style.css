@@ -85,7 +85,7 @@ footer {
     z-index: 0;
 }
 
-#send_button:hover {
+#send_button:hover.animate {
     animation: shake 0.4s 2;
 }
 
