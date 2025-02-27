@@ -31,7 +31,7 @@ function validateInput(input) {
     input.value = input.value.replace(/[<>]/g, '');
 }
 
-let randomValue = "placeholder";
+let randomValue = null;
 
 function getRandomElement(array) {
     // Vérifie si l'argument est un tableau et n'est pas vide
@@ -102,18 +102,21 @@ function writeAiAnswer() {
 }
 
 let paragraphCounter = 0;
+
 function addElement() {
     // crée un nouvel élément div
     let newDiv = document.createElement("div");
     // et lui donne un peu de contenu
     let newContent = document.createElement("p");
-    newContent.id = 'paragraph' + paragraphCounter;
+    newContent.id = 'paragraph';
     // ajoute le paragraphe à la nouvelle div créée
     newDiv.appendChild(newContent);
   
     // ajoute le nouvel élément créé et son contenu dans le DOM
     let currentDiv = document.getElementById("div1");
     document.body.insertBefore(newDiv, currentDiv);
+    let paragraph = document.getElementById("paragraph");
+    paragraph.innerHTML = "placeholder";
 }
 
 let counter = 0;
