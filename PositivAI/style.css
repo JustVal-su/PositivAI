@@ -41,6 +41,9 @@ footer {
     position: absolute;
     padding: 50px 20px 50px 20px;
     z-index: 1;
+    height: 200px;
+    overflow-x: scroll;
+    overflow-x: hidden;
 }
 
 .continue_panel {
