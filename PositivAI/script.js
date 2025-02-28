@@ -66,8 +66,6 @@ function removeContinueDiv() {
 }
 
 function printQuestion() {
-    let userQuestion = document.getElementById("ask_something").value;
-    console.log(userQuestion);
     document.getElementById("send_button").style.cursor = "not-allowed";
     sendButton.setAttribute("disabled", "");
     buttonIsDisabled = true;
@@ -101,22 +99,34 @@ function writeAiAnswer() {
     aiAnswerField.innerHTML = ai_answer;
 }
 
-let paragraphCounter = 0;
+let idCounter = 0;
+// Fonction pour générer un ID unique basé sur le compteur
+function generateSequentialId() {
+    idCounter++;
+    return 'ID' + idCounter;
+}
 
 function addElement() {
+    let inputElement = document.getElementById("ask_something");
+    let inputValue = inputElement.value;
+
+    if (inputValue === "") {
+        alert("Questions can't be blank")
+    } else {
     // crée un nouvel élément div
     let newDiv = document.createElement("div");
     // et lui donne un peu de contenu
     let newContent = document.createElement("p");
-    newContent.id = 'paragraph';
+    newContent.id = generateSequentialId();
     // ajoute le paragraphe à la nouvelle div créée
     newDiv.appendChild(newContent);
-  
     // ajoute le nouvel élément créé et son contenu dans le DOM
-    let currentDiv = document.getElementById("div1");
-    document.body.insertBefore(newDiv, currentDiv);
-    let paragraph = document.getElementById("paragraph");
-    paragraph.innerHTML = "placeholder";
+    document.body.insertBefore(newDiv, aiAnswerField);
+    let paragraph = document.getElementById("ID" + idCounter);
+    paragraph.innerHTML = inputValue;
+    inputElement.value = "";
+    printQuestion();
+    }
 }
 
 let counter = 0;
