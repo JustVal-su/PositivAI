@@ -109,23 +109,26 @@ function generateSequentialId() {
 function addElement() {
     let inputElement = document.getElementById("ask_something");
     let inputValue = inputElement.value;
+    let flexContainer = document.getElementById("flex_container");
 
     if (inputValue === "") {
-        alert("Questions can't be blank")
+        alert("Questions can't be empty")
     } else {
-    // crée un nouvel élément div
-    let newDiv = document.createElement("div");
-    // et lui donne un peu de contenu
-    let newContent = document.createElement("p");
-    newContent.id = generateSequentialId();
-    // ajoute le paragraphe à la nouvelle div créée
-    newDiv.appendChild(newContent);
-    // ajoute le nouvel élément créé et son contenu dans le DOM
-    document.body.insertBefore(newDiv, aiAnswerField);
-    let paragraph = document.getElementById("ID" + idCounter);
-    paragraph.innerHTML = inputValue;
-    inputElement.value = "";
-    printQuestion();
+        // crée un nouvel élément div
+        let newDiv = document.createElement("div");
+        newDiv.classList.add('flex_item');
+        // et lui donne un peu de contenu
+        let newContent = document.createElement("p");
+        newContent.id = generateSequentialId();
+        // ajoute le paragraphe à la nouvelle div créée
+        newDiv.appendChild(newContent);
+        // ajoute la div au conteneur flex
+        flexContainer.appendChild(newDiv);
+        // ajoute le nouvel élément créé et son contenu dans le DOM
+        let paragraph = document.getElementById("ID" + idCounter);
+        paragraph.innerHTML = inputValue;
+        inputElement.value = "";
+        printQuestion();
     }
 }
 

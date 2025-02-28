@@ -99,3 +99,16 @@ footer {
     75% { transform: rotate(5deg); }
     100% { transform: rotate(0deg); }
 }
+
+#flex_container {
+    border: solid black;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.side-by-side {
+    display: flex;
+    flex-direction: row;
+}
