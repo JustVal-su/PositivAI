@@ -2,7 +2,7 @@ const loginForm = document.getElementById("login");
 const continueDiv = document.getElementById("continue_div");
 const sendButton = document.getElementById("send_button");
 let buttonIsDisabled = false;
-
+let lilCounter = 0;
 
 function removeDisclaimer() {
     const element = document.getElementById("disclaimer");
@@ -85,6 +85,7 @@ function getRanEl() {
         sendButton.removeAttribute("disabled");
         document.getElementById("send_button").style.cursor = "auto";
         buttonIsDisabled = false;
+        lilCounter = 0;
     } else {
         writeAiAnswer();
     }
@@ -94,9 +95,29 @@ function getRanEl() {
     }
 }
 
+let idCounter2 = 0;
+
+function cloneOfGenerateSequentialId() {
+    idCounter++;
+    return 'ID' + idCounter2;
+}
+
+function setUpForAiAnswer() {
+    if (lilCounter === 0) {
+        let flexContainer = document.getElementById("flex_container");
+        let newDiv = document.createElement("div");
+        let newContent = document.createElement("p");
+        newContent.id = cloneOfGenerateSequentialId();
+        newDiv.appendChild(newContent);
+        flexContainer.appendChild(newDiv);
+    }
+}
 function writeAiAnswer() {
+    let paragraphAi = document.getElementById("ID" + idCounter2);
+    lilCounter = 1;
+    setUpForAiAnswer
     ai_answer = ai_answer + randomValue;
-    aiAnswerField.innerHTML = ai_answer;
+    paragraphAi.innerHTML = ai_answer;
 }
 
 let idCounter = 0;

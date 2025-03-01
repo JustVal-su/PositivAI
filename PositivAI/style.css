@@ -108,7 +108,39 @@ footer {
     align-items: start;
 }
 
-.side-by-side {
-    display: flex;
-    flex-direction: row;
+.flex_item {
+    background-color: #5669FA;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+
+/* scrollbar */
+
+#disclaimer {
+--sb-track-color: #416d82;
+--sb-thumb-color: #559ab9;
+--sb-size: 14px;
+}
+
+#disclaimer::-webkit-scrollbar {
+  width: var(--sb-size)
+}
+
+#disclaimer::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 1px;
+}
+
+#disclaimer::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 1px;
+  
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  #disclaimer {
+    scrollbar-color: var(--sb-thumb-color)
+                     var(--sb-track-color);
+  }
 }
