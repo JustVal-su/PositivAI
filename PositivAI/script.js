@@ -4,11 +4,13 @@ const sendButton = document.getElementById("send_button");
 let buttonIsDisabled = false;
 let lilCounter = 0;
 
+// Enlève la div de disclaimer de la page
 function removeDisclaimer() {
     const element = document.getElementById("disclaimer");
     element.remove();
 }
 
+// Gére le faux login
 function login() {
     let usernameText = document.getElementById("UsernameInput").value;
     let passwordText = document.getElementById("PasswordInput").value;
@@ -33,6 +35,7 @@ function validateInput(input) {
 
 let randomValue = null;
 
+// Fonction qui gère la séléction aléatoire d'un caractère dans un tableau
 function getRandomElement(array) {
     // Vérifie si l'argument est un tableau et n'est pas vide
     if (!Array.isArray(array) || array.length === 0) {
@@ -61,6 +64,7 @@ function getRandomElement(array) {
 // Je précise qu'à la base j'utilisais les 95 caractères ASCII et le mot-clé "end" pour définir la fin du message.
 let AsciiArray = ['end', ' ', '!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-', '.', '/', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ';', '=', '?', '@', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '[', '\\', ']', '^', '_', '`', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '{', '|', '}', '~', 'à', 'À', 'é', 'É'];
 
+// Supprime la div avec le bouton "continue"
 function removeContinueDiv() {
     continueDiv.remove();
 }

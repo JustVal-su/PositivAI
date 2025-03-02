@@ -46,6 +46,22 @@ footer {
     overflow-x: hidden;
 }
 
+.center {
+    text-align: center;
+}
+
+@keyframes arrow_animation {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(0, 15px); }
+    100% { transform: translate(0, 0); }
+}
+
+#arrow {
+    font-size: 32pt;
+    margin: 0 0 5px 0;
+    animation: arrow_animation 1s infinite;
+}
+
 .continue_panel {
     background-color: #4400ff;
     display: inline-block;   
@@ -114,6 +130,10 @@ footer {
     padding: 5px;
 }
 
+::selection {
+    color: white;
+    background-color: #559ab9;
+}
 
 /* scrollbar */
 
