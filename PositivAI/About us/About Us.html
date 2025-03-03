@@ -12,6 +12,11 @@
     <h1>EyeI official website !</h1>
     </header>
 
+    <div id="disclaimer">
+        <h1>This page is a part of a fictionnal project named PositivAi</h1>
+        <button onclick="removeDisclaimer()">Got it</button>
+    </div>
+
     <div class="last_goodbye">
         <h2><ins class="no_underline"><strong>We are sunsetting PositivAI</strong></ins></h2>
         <p><ins class="no_underline">Due to violation of intellectual property rights of some enterprise, we are forced to delete PositivAI and to put an end to our journey.
@@ -34,5 +39,12 @@
     <p class="description_posai">A positive AI.</p>
 
     </section>
+
+    <script>
+    function removeDisclaimer() {
+        const element = document.getElementById("disclaimer");
+        element.remove();
+    }
+    </script>
 </body>
 </html>
