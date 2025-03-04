@@ -4,11 +4,16 @@ const sendButton = document.getElementById("send_button");
 const logText = document.getElementById("logo_and_text");
 const field = document.getElementById("ask_something");
 const arrowButton = document.getElementById("send_button");
+const footer = document.getElementById("footer");
 let buttonIsDisabled = false;
 let counter = 0;
 let i = 0;
 let randomValue = null;
 let ai_answer = "";
+let textCounter = 0;
+let compteur = localStorage.getItem('bestScore') 
+            ? parseInt(localStorage.getItem('bestScore')) 
+            : 0;
 
 // Fonction qui bannit l'utilisation des caractères <> dans tous les input
 function validateInput(input) {
@@ -47,7 +52,6 @@ function removeContinueDiv() {
 }
 
 // Fonction qui gère la séléction aléatoire d'un caractère dans un tableau
-// Sélection aléatoire dans un tableau
 function getRandomElement(array) {
     if (!Array.isArray(array) || array.length === 0) {
         console.error("L'argument doit être un tableau non vide.");
@@ -57,6 +61,10 @@ function getRandomElement(array) {
     let rand = Math.floor(Math.random() * array.length);
     randomValue = array[rand];
     return randomValue;
+}
+
+function removeFooter() {
+    footer.remove();
 }
 
 // J'ai du supprimer les caractères "<>" car, avec le texte à l'intérieur, ils étaient interprétés comme du code html...
@@ -87,7 +95,16 @@ function getRanEl(contentElement) {
         sendButton.removeAttribute("disabled");
         document.getElementById("send_button").style.cursor = "auto";
         buttonIsDisabled = false;
+
+        if (localStorage.bestScore < textCounter) {
+            localStorage.bestScore = textCounter;
+        }
+
+        textCounter = 0;
+        console.log("Your best score is " + localStorage.bestScore);
+
     } else {
+        textCounter++;
         ai_answer += randomValue;
         contentElement.innerHTML = ai_answer; // Met à jour le <p> spécifique à cette réponse
         requestAnimationFrame(() => getRanEl(contentElement)); // Continue la boucle avec cet élément
@@ -115,6 +132,7 @@ function writeAiAnswer() {
         let newDiv = document.createElement("div");
         aiAnswerField = document.createElement("p");
         newDiv.appendChild(aiAnswerField);
+        newDiv.classList.add("ai-response");
         parentDiv.insertBefore(newDiv, marker);
         aiAnswerField.id = "ai_answer_field";
     }
@@ -129,6 +147,7 @@ function generateSequentialId() {
     return 'ID' + idCounter;
 }
 
+// Ajoute les élément qui constituent la demande de l'utilisateur
 function addElement() {
     let inputElement = document.getElementById("ask_something");
     let inputValue = inputElement.value;
@@ -155,6 +174,7 @@ function addElement() {
     }
 }
 
+// Gère les animations du bouton envoyer indépendamment du reste du code
 function buttonAnimations() {
     if (buttonIsDisabled == true) {
         sendButton.classList.remove("animate");

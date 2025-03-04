@@ -20,7 +20,7 @@ input {
 }
 
 footer {
-    position: absolute;
+    position: fixed;
     right: 10px;
     bottom: 10px;
     box-sizing: border-box;
@@ -151,6 +151,8 @@ footer {
 
 .ai-response {
     margin-left: 5px;
+    overflow-wrap: break-word; 
+    width: 550px;
 }
 
 ::selection {
@@ -190,4 +192,17 @@ footer {
 
 #ask_something, #send_button {
     display: none;
+}
+
+#delete_footer {
+    border: none;
+    background-color: #01b1a2;
+    color: white;
+    border-radius: 2px;
+    margin: 2px 15px 15px 155px;
+}
+
+#delete_footer:hover {
+    background-color: #00bdad;
+    transition: 0.1s;
 }
