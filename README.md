@@ -1,4 +1,5 @@
 # PositivAI
+![Banner for the readme](https://github.com/JustVal-su/PositivAI/blob/main/Banni%C3%A8re.png?raw=true)  
 What if ai was created in... before?
 A fake AI chatbot in a retro style.
 
