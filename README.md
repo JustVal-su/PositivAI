@@ -10,7 +10,7 @@ The enterprise had no luck : other companies take legal action and EyeI was forc
 ## Too bad but... is PositivAI worth it?
 Yes... No, absolutely no. But you can take a look ;) or not if you don't, you're also right!
 
-## I made this "chatbot" in about, uh, one month I think (the date of the first commit)
+## I made this "chatbot" in about, uh, one month I think (except minor changes for a better accessibility)
 But I'm lazy and the major part of the project was made in one week.
 
 ## I wanted to add a copy button
